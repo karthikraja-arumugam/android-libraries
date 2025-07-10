@@ -26,7 +26,7 @@ namespace Android.BillingClient.Api
         public IList<SkuDetails> SkuDetails { get; set; }
     }
 
-    public class QueryProductDetailsResult
+    public partial class QueryProductDetailsResult
     {
         public BillingResult Result { get; set; }
 
