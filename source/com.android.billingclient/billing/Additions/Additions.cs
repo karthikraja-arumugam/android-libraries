@@ -127,7 +127,8 @@ namespace Android.BillingClient.Api
         }
 
         [Obsolete("Use QueryProductDetailsAsync(QueryProductDetailsParams) instead")]
-        public Task<QuerySkuDetailsResult> QuerySkuDetailsAsync(SkuDetailsParams skuDetailsParams)
+        public Task<QuerySkuDetailsResult> QuerySkuDetailsAsync(SkuDetailsParams skuDetailsParams
+        )
         {
             var tcs = new TaskCompletionSource<QuerySkuDetailsResult>();
 
@@ -280,6 +281,9 @@ namespace Android.BillingClient.Api
 
         public void OnProductDetailsResponse(BillingResult result, IList<ProductDetails> skuDetails)
             => ProductDetailsResponseHandler?.Invoke(result, skuDetails);
+
+        public void OnProductDetailsResponse(BillingResult result, QueryProductDetailsResult queryResult)
+           => ProductDetailsResponseHandler?.Invoke(result, queryResult.ProductDetails);
     }
 
     internal class InternalPurchasesResponseListener : Java.Lang.Object, IPurchasesResponseListener
