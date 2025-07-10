@@ -127,8 +127,7 @@ namespace Android.BillingClient.Api
         }
 
         [Obsolete("Use QueryProductDetailsAsync(QueryProductDetailsParams) instead")]
-        public Task<QuerySkuDetailsResult> QuerySkuDetailsAsync(SkuDetailsParams skuDetailsParams
-        )
+        public Task<QuerySkuDetailsResult> QuerySkuDetailsAsync(SkuDetailsParams skuDetailsParams)
         {
             var tcs = new TaskCompletionSource<QuerySkuDetailsResult>();
 
